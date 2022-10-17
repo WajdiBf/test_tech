@@ -1,4 +1,4 @@
-## Project Employee_Pointer
+## Employee Pointer
 
 #### Example:
 
