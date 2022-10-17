@@ -1,0 +1,22 @@
+{
+  "name": "Nodejs_Mind",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": " nodemon ",
+    "start": " node . ",
+    "docker:run": " docker-compose  up -d --build"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-oas-generator": "^1.0.45",
+    "moment": "^2.29.4",
+    "mongoose": "^6.6.5",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.20",
+    "swagger-ui-express": "^4.5.0",
+    "validator": "^13.7.0"
+  }
+}

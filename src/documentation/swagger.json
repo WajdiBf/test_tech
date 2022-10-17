@@ -1,0 +1,178 @@
+{
+      "swagger": "2.0",
+      "info": {
+            "title": "Nodejs_Mind",
+            "version": "1.0.0",
+            "_comment": "[Specification JSON](/)"
+      },
+      "basePath": "/api/",
+      "components": {
+            "schemas": {
+                  "Employee": {
+                        "properties": {
+                              "name": {
+                                    "type": "string"
+                              },
+                              "firstName": {
+                                    "type": "string"
+                              },
+                              "department": {
+                                    "type": "string"
+                              }
+                        }
+                  }
+            }
+      },
+      "tags": [
+            {
+                  "name": "Employee API",
+                  "description": "Everything about Employee controller"
+            },
+            {
+                  "name": "Check in/out  API",
+                  "description": "Control employees check in and check out dates and diff between them "
+            }
+      ],
+      "paths": {
+            "/employees": {
+                  "post": {
+                        "tags": [
+                              "Employee API"
+                        ],
+                        "summary": "Create a new employee following default model ",
+                        "description": "employee register",
+                        "consumes": [
+                              "application/json"
+                        ],
+                        "produces": [
+                              "application/json"
+                        ],
+                        "parameters": [
+                              {
+                                    "in": "body",
+                                    "name": "body",
+                                    "description": "Sign in a employee",
+                                    "required": true,
+                                    "schema": {
+                                          "type": "object",
+                                          "properties": {
+                                                "name": {
+                                                      "type": "string"
+                                                },
+                                                "firstName": {
+                                                      "type": "string"
+                                                },
+                                                "department": {
+                                                      "type": "string"
+                                                }
+                                          }
+                                    }
+                              }
+                        ],
+                        "responses": {
+                              "200": {
+                                    "description": "successful operation"
+                              }
+                        }
+                  },
+                  "get": {
+                        "tags": [
+                              "Employee API"
+                        ],
+                        "summary": "Get all employee list ",
+                        "description": "Get all employee list ",
+                        "consumes": [
+                              "application/json"
+                        ],
+                        "parameters": [],
+                        "responses": {}
+                  }
+            },
+            "/employees/{created_date}": {
+                  "get": {
+                        "tags": [
+                              "Employee API"
+                        ],
+                        "summary": "Get One employee by creation date  ",
+                        "description": "Get One employee by creation date  ",
+                        "consumes": [
+                              "application/json"
+                        ],
+                        "parameters": [
+                              {
+                                    "name": "created_date",
+                                    "in": "path",
+                                    "required": true
+                              }
+                        ],
+                        "responses": {}
+                  }
+            },
+            "/employees/check-in/{id}": {
+                  "put": {
+                        "tags": [
+                              "Check in/out  API"
+                        ],
+                        "summary": "Update employee  ",
+                        "description": "Update employee    ",
+                        "consumes": "multipart/form-data",
+                        "parameters": [
+                              {
+                                    "name": "id",
+                                    "in": "path",
+                                    "description": "employee id ",
+                                    "required": true
+                              },
+                              {
+                                    "in": "body",
+                                    "name": "body",
+                                    "description": "Update   an employee",
+                                    "required": true,
+                                    "schema": {
+                                          "type": "object",
+                                          "properties": {
+                                                "comment": {
+                                                      "type": "string"
+                                                }
+                                          }
+                                    }
+                              }
+                        ],
+                        "responses": {}
+                  }
+            },
+            "/employees/check-out/{id}": {
+                  "put": {
+                        "tags": [
+                              "Check in/out  API"
+                        ],
+                        "summary": "Update employee  ",
+                        "description": "Update employee    ",
+                        "consumes": "multipart/form-data",
+                        "parameters": [
+                              {
+                                    "name": "id",
+                                    "in": "path",
+                                    "description": "employee id ",
+                                    "required": true
+                              },
+                              {
+                                    "in": "body",
+                                    "name": "body",
+                                    "description": "Update an employee",
+                                    "required": true,
+                                    "schema": {
+                                          "type": "object",
+                                          "properties": {
+                                                "comment": {
+                                                      "type": "string"
+                                                }
+                                          }
+                                    }
+                              }
+                        ],
+                        "responses": {}
+                  }
+            }
+      }
+}

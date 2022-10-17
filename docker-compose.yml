@@ -1,0 +1,24 @@
+version: '3'
+volumes:
+        dbdata:
+
+services:
+        tech_test_mind_nodejs:
+                container_name: tech_test_mind_nodejs
+                build: .
+                command: yarn start
+                environment:
+                        - MONGODB_URL=mongodb://mongodb:27017/test_mind
+                ports:
+                        - '5000:5000'
+
+                depends_on:
+                        - mongodb
+
+        mongodb:
+                container_name: mongodb
+                image: mongo:4.2.1-bionic
+                ports:
+                        - '27018:27017'
+                volumes:
+                        - dbdata:/data/db
