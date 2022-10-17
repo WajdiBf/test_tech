@@ -7,7 +7,7 @@ built with Nodejs, javascript, mongodb and docker .
 
 ## Project Status
 
-(only necessary if incomplete)
+(Development mode)
 
 #### Example:
 
